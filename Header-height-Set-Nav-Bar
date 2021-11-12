@@ -1,0 +1,6 @@
+let navheader = document.querySelector("#header-nav").offsetHeight;
+let navheadertop = document.querySelector(".navbar-collapse");
+navheadertop.style=`top:${navheader}px;`;
+document.querySelector(".section").addEventListener("click",function(){
+    console.log("Clicked");
+})
