@@ -1,0 +1,21 @@
+let tabs = document.querySelectorAll(".service");
+for(let i in tabs){
+  if(tabs.length >= i){
+      tabs[i].setAttribute("value",i);
+      tabs[i].addEventListener("click",()=>{
+        let activeTab = document.querySelector(".service.active");
+        if(activeTab){
+          activeTab.classList.remove("active");  
+        }
+        tabs[i].classList.add("active");
+        let tabSelected = tabs[i].getAttribute("value");
+        let tabsImg = document.querySelectorAll(`.sec__img picture`);
+        let tabsImgActive = document.querySelector(`.sec__img picture.active`);
+        if(tabsImgActive){
+          tabsImgActive.classList.remove("active");  
+        }
+        tabsImg[tabSelected].classList.add("active");
+      });  
+  }
+}
+let tabsImg = document.querySelector(`.services__sec__content .sec__img picture`).classList.add("active");
