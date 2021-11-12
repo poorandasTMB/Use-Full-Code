@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+</head>
+<style>
+body{
+    background-color: #101010;
+    font-family: sans-serif;
+}
+.faq__ques{
+    font-size: 24px;
+    color: #fff;
+    border-bottom: 1px solid #91929A;
+    position: relative;
+    padding: 20px 30px 20px 0;
+    
+}
+.faq__ques::after, .faq__ques::before {
+    content: "";
+    transition: 0.3s;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 3px;
+    width: 20px;
+    border-radius: 10px;
+    background-color: #91929A;
+  }
+  .faq__ques.active::after, .faq__ques.active::before {
+    background-color: #fff;
+  }
+  .faq__ques.active::before {
+    transform: translateY(-50%) rotate(270deg);
+  }
+  .faq__ans {
+    transition: 0.3s;
+    height: 0;
+    overflow: hidden;
+    font-size: 18px;
+    color: #91929A;
+  }
+
+</style>
+
+<script >
+    'use strict';
+    window.addEventListener('DOMContentLoaded', function() {
+        let faqQues = document.querySelectorAll('.faq__ques');
+        function removeClass(){
+            for (let i of faqQues) {
+                i.classList.remove("active");
+                i.nextElementSibling.setAttribute("style", `height: 0px;opacity:0;`);
+            }
+        }
+        for (let i of faqQues) {
+            i.addEventListener('click', ()=>{
+                if(i.classList.contains("active")){
+                    removeClass();    
+                }else{
+                    removeClass();    
+                    let height = i.nextElementSibling.scrollHeight;
+                    i.classList.add("active");
+                    i.nextElementSibling.setAttribute("style", `height: ${height}px;opacity:1;`);
+                }
+            });
+        }
+    });
+   
+    
+</script>
+<body>
+    <!-- faq template Start -->
+    <ul class="faq__list">   
+        <li class="faq__item">
+          <h4 class="faq__ques">Q1 : pankaj</h4>
+          <p class="faq__ans p__txt">Ans. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </li>
+        <li class="faq__item">
+          <h4 class="faq__ques">Q1 : pankaj</h4>
+          <p class="faq__ans p__txt">Ans. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </li>
+        <li class="faq__item">
+          <h4 class="faq__ques">Q1 : pankaj</h4>
+          <p class="faq__ans p__txt">Ans. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </li>
+      </ul>
+    <!-- faq template Start -->
+
+</body>
+</html>
