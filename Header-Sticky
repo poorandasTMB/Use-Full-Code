@@ -1,1 +1,15 @@
 
+let oldValue = 0;
+let header = document.querySelector("header");
+window.addEventListener("scroll",()=>{
+        if(window.scrollY > oldValue){
+            header.classList.remove("sticky");
+            oldValue = window.scrollY;
+            header.setAttribute("style" ,"top: -100%;transition:0.5s;");
+        }
+        else{
+            oldValue = window.scrollY;
+            header.classList.add("sticky");
+            header.setAttribute("style" ,"top: 10px;transition:0.5s;");
+        }
+    });
