@@ -1,0 +1,13 @@
+ for (let i of tabs) {
+        i.addEventListener('click', ()=>{
+            if(i.classList.contains("active")){
+                i.classList.remove("active");
+            }
+            else{
+                for( let s of tabs){
+                    s.classList.remove("active");    
+                }
+                i.classList.add("active");    
+            }
+        });
+    }
