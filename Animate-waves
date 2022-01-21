@@ -1,0 +1,58 @@
+            
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>waves</title>
+</head>
+<body>
+  <style>
+
+  </style>
+<canvas></canvas>  
+<script>  
+  const canvas = document.querySelector("canvas");
+      const c = canvas.getContext("2d");
+      canvas.width = innerWidth;
+      canvas.height = innerHeight;
+      const wave = {
+        y: canvas.width / 5,
+        length: 0.02 ,
+        amplitude: 50,
+        frequency: -0.0001,
+      };
+
+      /* Draw Canvas */
+      let increment = wave.frequency;
+      
+      function animate() {
+        requestAnimationFrame(animate);
+        c.clearRect(0, 0, canvas.width, canvas.height);
+        c.fillRect(0, 0, canvas.width, canvas.height);
+        c.fillStyle = "#1f1f24";
+
+        
+        c.beginPath();
+          
+          for (let i = 0; i < canvas.width; i += 30) {
+            c.moveTo(canvas.width / 2,canvas.height - 200);
+            c.lineTo(i, wave.y + Math.sin(i * wave.length + increment) * wave.amplitude );
+            c.arc(i, wave.y + Math.sin(i * wave.length + increment) * wave.amplitude , 2,0 ,Math.PI * 2);
+            increment += wave.frequency; 
+          }
+          var gradient = c.createLinearGradient(0, 0, canvas.width, 0);
+          gradient.addColorStop("0", "#d177a5");
+          gradient.addColorStop("0.5", "#7a70e1");
+          gradient.addColorStop("1", "#7ea9c2");
+          c.strokeStyle = "#f8bc3b";
+          c.lineWidth = 0.15;       
+          c.stroke();
+        
+        }
+      
+
+      animate();
+      
+</script>  
+</body>
+</html>
