@@ -1,0 +1,21 @@
+/* Popup Sound Js */
+let SoundBtn = document.querySelector(".notification__icon.select__sound");
+let SoundPopup = document.querySelector(".sound__reminder__popup");
+let ClosePopup = document.querySelector(".close__popup__btn");
+let ConfirmPopup = document.querySelector(".popup__Btn .confirm__btn");
+let CancelPopup = document.querySelector(".popup__Btn .cancel__btn");
+
+[ConfirmPopup, CancelPopup, ClosePopup, SoundBtn].forEach((element => {
+    element.addEventListener("click", () => {
+        if (element == SoundBtn) {
+            SoundPopup.style.display = "block";
+        }
+
+        else {
+            SoundPopup.style.display = "none";
+
+        }
+
+
+    });
+}));
