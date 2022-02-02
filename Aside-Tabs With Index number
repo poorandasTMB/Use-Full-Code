@@ -1,0 +1,14 @@
+let multiTabBtn = document.querySelectorAll(".multi__tab__btn");
+        let tabContent = document.querySelectorAll(".mainTabContent");
+            multiTabBtn.forEach((element,index) => {
+                    element.addEventListener("click",()=>{
+                        for(let j of multiTabBtn){
+                            j.classList.remove("active")    
+                        }
+                        for(let k of tabContent){
+                                k.classList.remove("active");  
+                        }    
+                        element.classList.add("active");
+                        tabContent[index].classList.add("active");  
+                    });
+            });
