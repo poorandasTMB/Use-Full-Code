@@ -1,0 +1,53 @@
+===== Git Commands for upload files for First time ====== 
+
+(1) git clone (https link) 
+   
+           OR
+
+(1) git init
+(2) git status
+(3) git add .
+(4) git commit -m "first commit"
+(5) git remote add origin (new repository https link)
+(6) git push origin master 
+
+=== Git clone branch === 
+(1) git clone <url> --branch <branchName> --single-branch
+
+=== Git branch === 
+(1) Git branch -a              (List branches)
+(2) git branch [branch name]      (Create a new branch)
+(3) git branch -d [branch name]    (Delete a branch)
+(4) git push origin --delete [branch name]      (Delete a remote branch)
+(5) git checkout [branch name] 		(Switch to a branch)
+(6) git branch -m [old branch name] [new branch name]   (Rename a local branch)
+(7) git merge [branch name]   (Merge a branch into the active branch)
+
+=== Git Commands for upload files === 
+
+(1) git status
+(2) git add .
+(3) git commit -m "Write here your Comment"
+(4) git pull 
+(5) git push
+
+
+=== Git Commands for revert old commit files === 
+
+(1) git log
+(2) git reset --hard commitNumber (92728044dbd2765934f3708155941ed132c62fe7)
+(3) git push -f origin master
+
+=== Git Commands for get back deleted commit files === 
+
+(1) git reflog
+(2) git reset --hard commit ID (208e735)
+(3) git push -f origin master
+
+=== Git Commands for revert old commit code single file === 
+
+(1) git checkout <second commit's number> index.html
+(2) git reset HEAD index.html
+
+=== Git Commands for get back deleted commit code single file === 
+(1) git checkout -- index.html
