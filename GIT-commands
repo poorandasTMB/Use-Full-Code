@@ -16,12 +16,13 @@
 
 === Git branch === 
 (1) Git branch -a              (List branches)
-(2) git branch [branch name]      (Create a new branch)
-(3) git branch -d [branch name]    (Delete a branch)
-(4) git push origin --delete [branch name]      (Delete a remote branch)
-(5) git checkout [branch name] 		(Switch to a branch)
-(6) git branch -m [old branch name] [new branch name]   (Rename a local branch)
-(7) git merge [branch name]   (Merge a branch into the active branch)
+(2) Git fetch
+(3) git branch [branch name]      (Create a new branch)
+(4) git branch -d [branch name]    (Delete a branch)
+(5) git push origin --delete [branch name]      (Delete a remote branch)
+(6) git checkout [branch name] 		(Switch to a branch)
+(7) git branch -m [old branch name] [new branch name]   (Rename a local branch)
+(8) git merge [branch name]   (Merge a branch into the active branch)
 
 === Git Commands for upload files === 
 
