@@ -1,12 +1,12 @@
-timer;
-  Debounce=(func)=>{
+let timer;
+ let Debounce=(func)=>{
      return function (...args){
        const context=this;
-       if(this.timer) clearTimeout(this.timer)
-       this.timer=setTimeout(()=>{
-        this.timer=null;
+       if(timer) clearTimeout(timer)
+       timer=setTimeout(()=>{
+        timer=null;
            func.apply(context,args)
        },500)
      } 
   }
-optimization =this.Debounce(this.filterForName)
+let optimization =Debounce(this.filterForName)
